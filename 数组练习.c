@@ -30,6 +30,4 @@ int main(){
     }
     printf("%d %d %.2lf %d",max,min,average,bigger_num);
     return 0;
-
-
 }
