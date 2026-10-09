@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <string.h>
 int my_strlen(const char *s){
     int count = 0;
     while(*s != '\0'){
