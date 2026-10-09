@@ -1,2 +1,12 @@
 ﻿hello.exe
 *.exe
+
+# 编译产物（Linux 下没有后缀）
+my_strlen
+array
+array_practice
+hello
+myself
+
+# 所有无后缀的可执行文件太宽泛，用上面这种逐个列的方式
+*.o
