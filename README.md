@@ -8,9 +8,11 @@
 | 文件 | 内容 |
 | --- | --- |
 | `array_practice.c` | 数组基础：读入 10 个整数，求最大/最小/平均值，并统计大于平均值的个数 |
-| `my_strlen.c` | 手写 `strlen`：用指针遍历，遇到 '\0' 停止计数 |
-| `my_strcpy.c` | 手写 `strcpy`：逐字符拷贝，并在末尾补 '\0'（含边界验证） |
+| `my_strlen.c` | 手写 `strlen`：遍历字符串，遇到 `'\0'` 停止计数 |
+| `my_strcpy.c` | 手写 `strcpy`：逐字符拷贝并在末尾补 `'\0'`（含哨兵值边界验证） |
 | `my_strcmp.c` | 手写 `strcmp`：逐字符比较，返回差值（正数 / 0 / 负数） |
+| `input_compare.c` | 字符串输入实验：对比 `scanf("%s")`、`scanf("%9s")`、`fgets` 三种读法，观察空白截断、宽度限制和换行符残留 |
+| `my_strcat.c` | 手写 `strcat`：两阶段实现（先定位目标串末尾，再追加源串），并补 `'\0'` |
 
 ## 编译与运行
 
@@ -22,17 +24,29 @@ gcc -Wall -Wextra -g -o my_strcmp my_strcmp.c
 ./my_strcmp
 ```
 
+排查内存问题时加 AddressSanitizer：
+
+```bash
+gcc -Wall -Wextra -g -fsanitize=address -o my_strcat my_strcat.c
+./my_strcat
+```
+
 > 注意：Linux 下运行当前目录的程序必须写 `./`，否则 shell 会去 PATH 里查找。
 
 ## 学习进度
 
 - [x] 数组基础（最大值 / 最小值 / 平均值 / 计数）
 - [x] 手写 `strlen`
-- [x] 手写 `strcpy` + 边界验证（用 '#' 填满目标缓冲区，验证 '\0' 落在正确位置）
+- [x] 手写 `strcpy` + 边界验证（用 `'#'` 填满目标缓冲区，验证 `'\0'` 落在正确位置）
 - [x] 手写 `strcmp`
+- [x] 字符串输入：`scanf` vs `fgets` 的行为差异
+- [x] 手写 `strcat`（两阶段实现 + 空串边界测试）
 - [ ] 二维数组
-- [ ] 手写 `strcat`
+- [ ] 函数的进阶用法（多文件、头文件、作用域）
+- [ ] 结构体
+- [ ] 文件读写
 - [ ] 指针（第 3~6 周）
+- [ ] 动态内存
 
 ## 约定
 
