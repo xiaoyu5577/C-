@@ -1,12 +1,14 @@
 hello.exe
 *.exe
 
-# 编译产物（Linux 下没有后缀）
+# 编译产物（Linux 下没有后缀）—— 逐个列，学一个加一个
 my_strlen
 my_strcpy
 my_strcmp
-array
+my_strcat
 array_practice
+input_compare
+compare_scanf-fgets
 hello
 myself
 
